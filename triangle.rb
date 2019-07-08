@@ -1,5 +1,6 @@
 # Triangle Project Code.
 
+
 # Triangle analyzes the lengths of the sides of a triangle
 # (represented by a, b and c) and returns the type of triangle.
 #
@@ -15,6 +16,16 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  if [a, b, c].min<=0||(a+b)<=c||(a+c)<=b||(c+b)<=a
+    raise TriangleError, "why the exception happened"
+  end
+  if (a==b)&&(a==c) 
+    return :equilateral
+  elsif (a==b)||(a==c)||(b==c) 
+      return :isosceles
+  else
+      return :scalene 
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
